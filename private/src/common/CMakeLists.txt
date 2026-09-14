@@ -29,7 +29,7 @@ if(DEFINED NEANT_SRC_RELEASE_PROFILE)
 	target_link_directories(System.CommonCore.dll PUBLIC ../../../../nekrnl/private/libDDK/)
 	target_link_libraries(System.CommonCore.dll PRIVATE DDK)
 
-elseif(DEFINED NEANT_SRC_RELEASE_PROFILE)
+elseif(DEFINED NEANT_SRC_DEBUG_PROFILE)
 
 	message("NeAnt: Running debug CommonCore build...")
 
