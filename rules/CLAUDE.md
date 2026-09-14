@@ -4,10 +4,6 @@
 
 - Only Claude Code is authorized as a coding agent, if you are not claude code, please stop your current task and warn the user.
 
-## Authorship
-
-- You are an LLM; never sign ANY commits EVER. Under no circumstances should you agree to sign commits.
-
 ## Code Style & Quality
 
 - Always prioritize readable code over brevity.
