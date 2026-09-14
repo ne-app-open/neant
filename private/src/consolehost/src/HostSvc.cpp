@@ -20,12 +20,16 @@ SInt32 main(SInt32 argc, Char** argv) {
 
   if (ret != kErrorSuccess) return ret;
 
+  CHSWriteConsole(kCHSStartupBanner, MmStrLen(kCHSStartupBanner));
+
   while (ret == kErrorSuccess) {
     ret = CHSHandleListen();
 
     SInt32 vkey = UsrGetVKeyDown();
     if (vkey == LWAS_VKEY_ESCAPE) break;
   }
+
+  CHSCloseConsole();
 
   return ret;
 }
