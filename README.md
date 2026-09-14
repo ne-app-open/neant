@@ -1,10 +1,6 @@
 <!-- ReadMe of the NeAnt -->
 
-# Ne.app NeAnt (fka NeAnt)
-
-### Notice
-
-NeAnt is not open to new contributors, unless you contributed to similar Ne.app modules and similar large scale open source projects. This is done to have the highest quality merge requests.
+# Ne.app NeAnt
 
 <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-blue.svg?style=for-the-badge" alt="LICENSE"></a>
 ![GitHub Repo Stars](https://img.shields.io/github/stars/ne-app-eu/src?style=for-the-badge)
