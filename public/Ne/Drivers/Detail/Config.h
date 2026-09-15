@@ -6,6 +6,9 @@
 #ifndef _NE_DDK_CONFIG_H_
 #define _NE_DDK_CONFIG_H_
 
+#include <DriverKit/DriverKit.h>
+#include <SystemKit/Macros.h>
+
 #define _ARCH __ne_arch
 
 #define _SUBSYSTEM_NET 0x1000
@@ -24,17 +27,18 @@
 #define CLEANUP __cleanup__
 #endif
 
-#include <DriverKit/DriverKit.h>
-#include <SystemKit/Macros.h>
+#ifndef __cleanup
+#define __cleanup(x) unused
+#endif
 
-DDK_EXTERN void ddki_cleanup(int32_t**);
+DDK_EXTERN void ddk_cleanup_zone(int32_t**);
 
 struct ddk_guard_type _FINAL {
-    int32_t* ATTRIBUTE(CLEANUP(ddki_cleanup)) e_;
+    int32_t* e_;
 };
 
 /// @brief Does enable the DDK guard when calling in a stack frame.
-DDK_EXTERN void ddk_guard_function(struct ddk_guard_type*);
+DDK_EXTERN void ddk_guard_zone(struct ddk_guard_type*);
 
 /// @brief Does a sanity check for the DDK driver.
 DDK_EXTERN bool ddk_sanity_check(void);

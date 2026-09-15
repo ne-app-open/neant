@@ -21,7 +21,7 @@ DDK_EXTERN bool ddk_sanity_check(void) {
 }
 
 /// @brief Does enable the DDK guard when calling in a stack frame.
-DDK_EXTERN void ddk_guard_function(struct ddk_guard_type* g) {
+DDK_EXTERN void ddk_guard_zone(struct ddk_guard_type* g) {
 #ifdef __NEOSKRNL__
     if (!g) ke_call_dispatch("KeRuntimeCheck", 1, g, sizeof(struct ddk_guard_type));
 #else
@@ -30,11 +30,13 @@ DDK_EXTERN void ddk_guard_function(struct ddk_guard_type* g) {
 
     while (g->e_ != NULL && *g->e_);
 
-    g->e_ = (int32_t*)kalloc(sizeof(int32_t));
+    int32_t* e ATTRIBUTE(cleanup(ddk_cleanup_zone)) = (int32_t*)kalloc(sizeof(int32_t));
+    
+    g->e_ = e;
     *g->e_ = YES;
 }
 
-DDK_EXTERN void ddki_cleanup(int32_t** e) {
+DDK_EXTERN void ddk_cleanup_zone(int32_t** e) {
     if (!e || !*e) return;
     **e = NO;
 
