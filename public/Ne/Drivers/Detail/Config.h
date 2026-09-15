@@ -27,14 +27,22 @@
 #include <DriverKit/DriverKit.h>
 #include <SystemKit/Macros.h>
 
-DDK_EXTERN void ddki_cleanup(int32_t**);
+DDK_EXTERN void ddk_cleanup_zone(int32_t**);
+
+#ifndef __cleanup
+#define __cleanup cleanup
+#endif
 
 struct ddk_guard_type _FINAL {
-    int32_t* ATTRIBUTE(CLEANUP(ddki_cleanup)) e_;
+    int32_t* ATTRIBUTE(__cleanup(ddk_cleanup_zone)) e_;
 };
 
+#ifndef ddk_guard_function
+#define ddk_guard_function ddk_guard_zone
+#endif
+
 /// @brief Does enable the DDK guard when calling in a stack frame.
-DDK_EXTERN void ddk_guard_function(struct ddk_guard_type*);
+DDK_EXTERN void ddk_guard_zone(struct ddk_guard_type*);
 
 /// @brief Does a sanity check for the DDK driver.
 DDK_EXTERN bool ddk_sanity_check(void);

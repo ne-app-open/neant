@@ -34,7 +34,7 @@ DDK_EXTERN void ddk_guard_function(struct ddk_guard_type* g) {
     *g->e_ = YES;
 }
 
-DDK_EXTERN void ddki_cleanup(int32_t** e) {
+DDK_EXTERN void ddk_cleanup_zone(int32_t** e) {
     if (!e || !*e) return;
     **e = NO;
 
