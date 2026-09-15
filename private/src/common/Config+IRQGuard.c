@@ -14,7 +14,7 @@ DDK_EXTERN void ddk_lock_irq(void) {
   if (!kIrqGuard) 
     kIrqGuard = (struct ddk_guard_type*) kalloc(sizeof(struct ddk_guard_type));
 
-  ddk_guard_function(kIrqGuard);
+  ddk_guard_zone(kIrqGuard);
 
 #ifdef __NEOSKRNL__
   ke_call_dispatch("IrqLockInterrupts", 1, kIrqGuard, sizeof(struct ddk_guard_type));
