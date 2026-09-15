@@ -30,7 +30,7 @@
 DDK_EXTERN void ddk_cleanup_zone(int32_t**);
 
 #ifndef __cleanup
-#define __cleanup cleanup
+#define __cleanup(x) unused
 #endif
 
 struct ddk_guard_type _FINAL {
