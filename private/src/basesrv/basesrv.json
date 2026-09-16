@@ -9,6 +9,7 @@
     "../../../../krnl/private",
     "../../../../krnl/private/libSystem",
     "../../../../krnl/private/libMsg",
+    "../../../../krnl/private/libPOSIX",
     "../../../../krnl/public/src"
   ],
   "sources_path": [
