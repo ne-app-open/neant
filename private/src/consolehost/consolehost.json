@@ -30,7 +30,7 @@
     "kNeDbgVersion=0x0100",
     "kNeDbgVersionHighest=0x0100",
     "kNeDbgVersionLowest=0x0100",
-    "kCHSStartupBanner=\"The Console Host Service, (c) Ne.app 2026.\n\n\""
+    "kCHSStartupBanner=\"The Console Host Service, (c) Ne.app 2026.\""
   ],
   "description": "The Ne.app NeAnt Console Host Service."
 }

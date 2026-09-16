@@ -13,20 +13,16 @@ SInt32 main(SInt32 argc, Char** argv) {
   LIBSYS_UNUSED(argc);
   LIBSYS_UNUSED(argv);
 
-  PrintOut(nullptr, "%s",
-           "Ne.app Console Host Service, Copyright 2026 Ne.app, all rights reserved.\r");
-
   auto ret = CHSOpenConsole();
 
   if (ret != kErrorSuccess) return ret;
-
-  CHSWriteConsole(kCHSStartupBanner, MmStrLen(kCHSStartupBanner));
 
   while (ret == kErrorSuccess) {
     ret = CHSHandleListen();
 
     SInt32 vkey = UsrGetVKeyDown();
     if (vkey == LWAS_VKEY_ESCAPE) break;
+    if (vkey == (LWAS_VKEY_TAB & LWAS_VKEY_C)) break;
   }
 
   CHSCloseConsole();
