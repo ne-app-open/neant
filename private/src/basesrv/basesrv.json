@@ -8,6 +8,7 @@
     "./",
     "../../../../krnl/private",
     "../../../../krnl/private/libSystem",
+    "../../../../krnl/private/libMsg",
     "../../../../krnl/public/src"
   ],
   "sources_path": [
