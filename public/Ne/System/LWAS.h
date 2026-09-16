@@ -14,8 +14,8 @@
 /// @brief Local Window Application Subsystem.
 /// *******************************************************
 
-#include <Ne/System/Detail/Config.h>
 #include <Ne/System/CAS.h>
+#include <Ne/System/Detail/Config.h>
 
 struct LHANDLE;
 
@@ -152,18 +152,19 @@ typedef enum {
 } LWAS_VKey;
 
 IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*);
+
 IMPORT_C Void UsrDestroyWindow(struct LHANDLE*);
 
 /// @brief Is Virtual Key Up?
-IMPORT_C SInt32 UsrGetVKeyUp(Void);
+IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key);
 
 /// @brief Is Virtual Key Down?
-IMPORT_C SInt32 UsrGetVKeyDown(Void);
+IMPORT_C SInt32 UsrGetVKeyDown(const SInt32 key);
 
 /// @brief Is Virtual Key?
-IMPORT_C Bool   UsrIsVKey(Void);
+IMPORT_C Bool UsrIsVKey(const SInt32 key);
 
 typedef struct LHANDLE HLWAS;
-typedef HLWAS* PHLWAS;
+typedef HLWAS*         PHLWAS;
 
 #endif  // _NE_LWAS_SUBSYSTEM_H_

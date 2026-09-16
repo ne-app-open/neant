@@ -6,3 +6,5 @@
 #include <CHSKit/Console.h>
 #include <Ne/System/LWAS.h>
 
+const UInt8 kWindowFrame[] = {};
+const SizeT kWindowFrameSz = 0UL;
