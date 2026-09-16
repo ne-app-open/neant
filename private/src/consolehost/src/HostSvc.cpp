@@ -20,7 +20,8 @@ SInt32 main(SInt32 argc, Char** argv) {
   while (ret == kErrorSuccess) {
     ret = CHSHandleListen();
 
-    SInt32 vkey = UsrGetVKeyDown();
+    SInt32 vkey = UsrGetVKeyDown(0);
+
     if (vkey == LWAS_VKEY_ESCAPE) break;
     if (vkey == (LWAS_VKEY_TAB & LWAS_VKEY_C)) break;
   }
