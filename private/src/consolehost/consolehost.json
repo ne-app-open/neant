@@ -5,13 +5,13 @@
     "../",
     "./",
     "../../../public/",
-    "../../../../nekrnl/private/libPOSIX/",
-    "../../../../nekrnl/private/libSystem/",
-    "../../../../nekrnl/private/libPThread/",
-    "../../../../nekrnl/private/libThread/",
-    "../../../../nekrnl/private/",
-    "../../../../nekrnl/public/src",
-    "../../../../nekrnl/private/libMsg/"
+    "../../../../krnl/private/libPOSIX/",
+    "../../../../krnl/private/libSystem/",
+    "../../../../krnl/private/libPThread/",
+    "../../../../krnl/private/libThread/",
+    "../../../../krnl/private/",
+    "../../../../krnl/public/src",
+    "../../../../krnl/private/libMsg/"
   ],
   "sources_path": [
     "src/*.cpp",
@@ -23,13 +23,14 @@
     "-fno-rtti",
     "-fno-exceptions",
     "-Wl,--subsystem=17",
-    "-L../../../../nekrnl/private/libSystem/",
+    "-L../../../../krnl/private/libSystem/",
     "-lSystem"
   ],
   "cpp_macros": [
     "kNeDbgVersion=0x0100",
     "kNeDbgVersionHighest=0x0100",
-    "kNeDbgVersionLowest=0x0100"
+    "kNeDbgVersionLowest=0x0100",
+    "kCHSStartupBanner=\"The Console Host Service, (c) Ne.app 2026.\n\n\""
   ],
   "description": "The Ne.app NeAnt Console Host Service."
 }

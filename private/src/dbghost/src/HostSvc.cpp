@@ -9,6 +9,10 @@
 #define kDbgHostServiceLoopName "_DbgHostServiceLoop"
 #endif
 
+#ifndef kDbgHostTrapOffset
+#define kDbgHostTrapOffset 8
+#endif
+
 #ifdef __x86_64__
 _SHARED ATTRIBUTE(naked)
 Void    dbgi_trap_hang(Void) {
@@ -44,13 +48,13 @@ SInt32 main(SInt32 argc, Char** argv) {
 
   while (kDbgHostEnabled) {
     if (kDbgHost && kDbgHost->fDbgSocket == kNeInvalidDbgSocket) break;
-    SInt64* ret = (SInt64*) nesys_syscall_arg_1(nesys_hash_64(kDbgHostServiceLoopName));
+    volatile UInt64* ret = (volatile UInt64*) nesys_syscall_arg_1(nesys_hash_64(kDbgHostServiceLoopName));
 
     if (ret && *ret > 0) {
       if (*ret == DBG_VKEY_BREAK) {
-        *(ret + 2) = (SInt64) dbgi_trap_hang;
+        *(ret + kDbgHostTrapOffset) = (UInt64) dbgi_trap_hang;
       } else if (*ret == DBG_VKEY_BREAK) {
-        *(ret + 2) = (SInt64) dbgi_trap_break;
+        *(ret + kDbgHostTrapOffset) = (UInt64) dbgi_trap_break;
       }
     }
   }

@@ -55,17 +55,6 @@
 
 #define SUBSYSTEM_HEADER_MAGIC (0xf000eee)
 
-/// @brief The Subsystem Information for Program Loader.
-struct _SHARED SUBSYSTEM_INFO_MANIFEST _FINAL {
-  SInt32 fMagic;
-  SInt32 fSubsystemTarget;
-  SInt32 fVersion, fFlags, fImageKind;
-  Char   fName[FILE_MAX_LEN];
-  SizeT  fNameSz;
-  Char   fRootPath[FILE_MAX_LEN];
-  SizeT  fRootPathSz;
-};
-
 #ifndef SUBSYSTEM_INVALID_TARGET
 #define SUBSYSTEM_INVALID_TARGET (0)
 #endif
@@ -85,6 +74,17 @@ struct _SHARED SUBSYSTEM_INFO_MANIFEST _FINAL {
 #ifndef SUBSYSTEM_ANT_TARGET
 #define SUBSYSTEM_ANT_TARGET (SUBSYSTEM_POSIX_TARGET + 3)
 #endif
+
+/// @brief The Subsystem Information for Program Loader.
+struct _SHARED SUBSYSTEM_INFO_MANIFEST _FINAL {
+  SInt32 fMagic;
+  SInt32 fSubsystemTarget;
+  SInt32 fVersion, fFlags, fImageKind;
+  Char   fName[FILE_MAX_LEN];
+  SizeT  fNameSz;
+  Char   fRootPath[FILE_MAX_LEN];
+  SizeT  fRootPathSz;
+};
 
 IMPORT_C Void SubsystemInfoManifestInit(_InOut SUBSYSTEM_INFO_MANIFEST* manifest_in,
                                         _Input SizeT                    in);

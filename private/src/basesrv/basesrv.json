@@ -6,7 +6,7 @@
     "./",
     "../../../../krnl/private",
     "../../../../krnl/private/libSystem",
-    "../../../public/"
+    "../../../../krnl/public/src"
   ],
   "sources_path": [
     "src/*.cpp"
@@ -16,7 +16,9 @@
     "-ffreestanding",
     "-fno-rtti",
     "-fno-exceptions",
-    "-Wl,--subsystem=17"
+    "-Wl,--subsystem=17",
+    "-L../../../../krnl/private/libSystem",
+    "-lSystem"
   ],
   "cpp_macros": [
     "kNeBaseVersion=0x0100",

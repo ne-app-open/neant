@@ -4,6 +4,8 @@ __pycache__
 
 .claude
 
+build/
+
 *~
 
 xcuserdata/
