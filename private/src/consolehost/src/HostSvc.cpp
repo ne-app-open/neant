@@ -6,7 +6,6 @@
 #include <CHSKit/Console.h>
 #include <Ne/System/LWAS.h>
 
-IMPORT_C SInt32 CHSOpenConsole(Void);
 IMPORT_C SInt32 CHSHandleListen(Void);
 
 SInt32 main(SInt32 argc, Char** argv) {

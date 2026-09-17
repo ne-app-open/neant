@@ -8,3 +8,5 @@
 
 const UInt8 kWindowFrame[] = {};
 const SizeT kWindowFrameSz = 0UL;
+
+/// TODO: LWAS frame to render the VT compliant text.
