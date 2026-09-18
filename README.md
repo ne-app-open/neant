@@ -11,7 +11,7 @@ Please follow the instructions below to get started:
 
 ## Building NeAnt
 
-You will need
+You will need the following:
 
 - `nebld`, Ne.app's in-house build system.
 - `MinGW` or `Clang`, depending on the HAL/target ISA.
