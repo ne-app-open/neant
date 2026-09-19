@@ -3,9 +3,15 @@
   "compiler_std": "c++20",
   "headers_path": [
     "../",
+    "../../../public/",
+    "../consolehost",
     "./",
     "../../../../krnl/private",
     "../../../../krnl/private/libSystem",
+    "../../../../krnl/private/libMsg",
+    "../../../../krnl/private/libPOSIX",
+    "../../../../krnl/private/libPThread",
+    "../../../../krnl/private/libThread",
     "../../../../krnl/public/src"
   ],
   "sources_path": [
