@@ -31,11 +31,11 @@
 #define __cleanup(x) unused
 #endif
 
-DDK_EXTERN void ddk_cleanup_zone(int32_t**);
-
 struct ddk_guard_type _FINAL {
     int32_t* e_;
 };
+
+DDK_EXTERN void ddk_cleanup_zone(int32_t**);
 
 /// @brief Does enable the DDK guard when calling in a stack frame.
 DDK_EXTERN void ddk_guard_zone(struct ddk_guard_type*);
