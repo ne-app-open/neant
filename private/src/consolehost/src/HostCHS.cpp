@@ -13,7 +13,7 @@ static SizeT           kConsoleWindowSz{};
 IMPORT_C SInt32 CHSCloseConsole(Void) {
   if (!kConsoleWindowSz || !kConsoleWindowPtr) return kErrorInvalidData;
 
-  UsrDestroyWindow(kConsoleWnd);
+  if (kConsoleWnd) UsrDestroyWindow(kConsoleWnd);
   kConsoleWnd = nullptr;
 
   return kErrorSuccess;
@@ -30,10 +30,24 @@ IMPORT_C SInt32 CHSOpenConsole(Void) {
   return kErrorInvalidData;
 }
 
+IMPORT_C SInt32 CHSHandleListenII(Void) {
+  if (!kConsoleWnd) return kErrorInvalidData;
+
+  do {
+    // Prevent window closure if listening.
+    if (kConsoleWnd == nullptr) {
+      CHSOpenConsole();
+      MUST_PASS(kConsoleWnd);
+    }
+  } while (kConsoleWnd != nullptr);
+
+  return kErrorSuccess;
+}
+
 IMPORT_C SInt32 CHSHandleListen(Void) {
   if (!kConsoleWnd) return kErrorInvalidData;
 
-  while (kConsoleWnd);
+  while (kConsoleWnd != nullptr);
 
   return kErrorSuccess;
 }
