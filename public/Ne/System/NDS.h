@@ -16,3 +16,5 @@
 
 #include <Ne/System/Detail/Config.h>
 #include <Ne/System/CAS.h>
+
+/// AMLALE: This can be owned by someone else.
