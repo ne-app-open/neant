@@ -17,7 +17,7 @@ if(DEFINED NEANT_SRC_RELEASE_PROFILE)
 	set(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++)
 	set(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc)
 
-	add_library(DDK.DDS.dll SHARED Config+ThreadBlock.S)
+	add_library(DDK.DDS.dll SHARED Config+DDS.c Config+ThreadBlock.S)
 
 	target_compile_definitions(DDK.DDS.dll PRIVATE _NDEBUG __NEOSKRNL__)
 	target_compile_options(DDK.DDS.dll PRIVATE -ffreestanding -nostdlib -fno-rtti)
@@ -43,7 +43,7 @@ elseif(DEFINED NEANT_SRC_DEBUG_PROFILE)
 	set(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++)
 	set(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc)
 
-	add_library(DDK.DDS.dll SHARED Config+ThreadBlock.S)
+	add_library(DDK.DDS.dll SHARED Config+DDS.c Config+ThreadBlock.S)
 
 	target_compile_definitions(DDK.DDS.dll PRIVATE _DEBUG __NEOSKRNL__)
 	target_compile_options(DDK.DDS.dll PRIVATE -ffreestanding -nostdlib -fno-rtti)
