@@ -19,12 +19,16 @@
 
 struct LHANDLE;
 
+#ifndef kNeAntPadLen
+#define kNeAntPadLen (8)
+#endif
+
 struct _SHARED LHANDLE _FINAL {
-  VoidPtr fHandle;  /// @brief Mandatory for NeAnt handles.
-  Char    fPad[8];
+  Ref fHandle;  /// @brief Mandatory for NeAnt handles.
+  Char    fPad[kNeAntPadLen];
   SInt64  fMagic;
   SInt32  fHostID, fFlags, fKind;
-  Char    fPad2[8];
+  Char    fPad2[kNeAntPadLen];
 };
 
 typedef enum {

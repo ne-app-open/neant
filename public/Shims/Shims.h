@@ -8,4 +8,15 @@
 
 #include <Ne/System/CAS.h>
 
+#ifndef _SHIMS
+#define _SHIMS (202605L)
+#endif
+
+struct SHANDLE;
+
+struct _SHARED SHANDLE _FINAL {
+  Ref fHandle;  /// @brief Mandatory for NeAnt handles.
+  VoidPtr fPrivate;
+};
+
 #endif
