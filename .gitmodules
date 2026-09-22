@@ -1,0 +1,3 @@
+[submodule "EXTERNAL_HEADERS/nebld"]
+	path = EXTERNAL_HEADERS/nebld
+	url = git@github.com:ne-app-open/nebld.git
