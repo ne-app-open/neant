@@ -1,3 +1,3 @@
 #! /bin/sh
 
-x86_64-w64-mingw32-windres -I../../ psx_rsrc.rsrc -O coff -o psx_rsrc.obj
+x86_64-w64-mingw32-windres -I../../ null_rsrc.rsrc -O coff -o null_rsrc.obj
