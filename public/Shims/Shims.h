@@ -14,11 +14,11 @@
 
 struct SHANDLE;
 
-typedef Ref ShmsRef;
+typedef Ref     ShmsRef;
 typedef VoidPtr ShmsBlob;
 
 struct _SHARED SHANDLE _FINAL {
-  ShmsRef fHandle;  /// @brief Mandatory for NeAnt handles.
+  ShmsRef  fHandle;  /// @brief Mandatory for NeAnt handles.
   ShmsBlob fPrivate;
 };
 
@@ -26,8 +26,12 @@ IMPORT_C SInt32 ShmInstallProc(_InOut SHANDLE* handle, _Input VoidPtr proc);
 
 IMPORT_C SInt32 ShmInstallProcII(_InOut SHANDLE* handle, _Input VoidPtr proc, _Input SInt32 flags);
 
+IMPORT_C SInt32 ShmInstallProcIII(_InOut SHANDLE* handle, _Input VoidPtr proc, _Input SInt32 flags, _Input SInt32 type);
+
 IMPORT_C Void ShmDestroyProc(_InOut SHANDLE* handle);
 
 IMPORT_C Void ShmDestroyProcII(_InOut SHANDLE* handle, _Input SInt32 flags);
+
+IMPORT_C Void ShmDestroyProcIII(_InOut SHANDLE* handle, _Input SInt32 flags, _Input Bool zero_out);
 
 #endif
