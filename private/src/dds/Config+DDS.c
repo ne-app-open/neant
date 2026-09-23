@@ -9,3 +9,7 @@
 IMPORT_C const SInt32 kDDSVersion    = _DDS;
 IMPORT_C const SInt32 kNeKernelVersion = _NEKERNEL;
 IMPORT_C const SInt32 kCommonCoreVersion = _COMMONCORE;
+
+#ifndef kKernelVersion
+#define kKernelVersion kNeKernelVersion
+#endif
