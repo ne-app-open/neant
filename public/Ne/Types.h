@@ -15,4 +15,7 @@ typedef unsigned short Word;
 typedef int   SDWord;
 typedef short SWord;
 
+typedef __PTRDIFF_TYPE__ PtrDiff;
+typedef __PTRDIFF_TYPE__ Offset;
+
 #endif
