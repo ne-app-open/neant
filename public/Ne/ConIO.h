@@ -9,7 +9,25 @@
 #include <Ne/Types.h>
 #include <SystemKit/Macros.h>
 
+#ifndef _CONIO
+#define _CONIO (202610)
+#endif
+
 IMPORT_C int printf(const char*, ...);
 IMPORT_C int scanf(const char*, ...);
+
+#ifdef NE_CONIO_COMPAT
+IMPORT_C int cscanf(char* fmt, ...);
+IMPORT_C int getch(void);
+IMPORT_C int getche(void);
+IMPORT_C char* cgets(char* s);
+IMPORT_C void clrscr(void);
+IMPORT_C int cputs(const char* s);
+#endif
+
+#ifdef NE_CLRSCR_SUPPORT
+#undef clrscr
+#define clrscr() printf("\e[1;1H\e[2J");
+#endif
 
 #endif

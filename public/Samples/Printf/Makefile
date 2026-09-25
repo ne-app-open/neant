@@ -4,10 +4,6 @@
 # Official repository: https://github.com/ne-app-eu/src
 
 .PHONY: all
-all: clean
+all:
 	g++ -I../../ -I../../../../nekrnl/private/libSystem -I../../../../nekrnl/private/ \
 	-fPIE -std=c++20 Printf.cpp
-
-.PHONY: clean
-clean:
-	rm a.out
