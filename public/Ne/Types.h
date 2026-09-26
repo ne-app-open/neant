@@ -9,6 +9,8 @@
 #include <Ne/OS.h>
 #include <SystemKit/Macros.h>
 
+/// @brief This file is useful for a set of standaridzed types for NeAnt/Ant distros.
+
 typedef unsigned int   DWord;
 typedef unsigned short Word;
 
@@ -17,5 +19,15 @@ typedef short SWord;
 
 typedef __PTRDIFF_TYPE__ PtrDiff;
 typedef __PTRDIFF_TYPE__ Offset;
+
+typedef DWord Status;
+typedef DWord TypeCode;
+
+typedef __UINTPTR_TYPE__ PhysAddr;
+typedef __UINTPTR_TYPE__ VirtAddr;
+
+#ifndef N_EMPTY_TEXT
+#define N_EMPTY_TEXT ""
+#endif
 
 #endif
