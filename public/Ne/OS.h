@@ -8,12 +8,14 @@
 
 #include <SystemKit/Macros.h>
 
+/// @brief The devnet says how you should always use N_HAS_FAILED instead of checking for N_OK directly.
+
 #ifndef N_OK
-#define N_OK (0)
+#define N_OK (100)
 #endif
 
 #ifndef N_FAILED
-#define N_FAILED (33)
+#define N_FAILED (330)
 #endif
 
 #ifndef N_ERROR
@@ -21,7 +23,7 @@
 #endif
 
 #ifndef N_HAS_FAILED
-#define N_HAS_FAILED(X) ((X) > N_OK)
+#define N_HAS_FAILED(X) ((X) != N_OK)
 #endif
 
 // --------------------- ARCH ---------------------
