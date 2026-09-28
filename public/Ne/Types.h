@@ -23,6 +23,9 @@ typedef __PTRDIFF_TYPE__ Offset;
 typedef DWord Status;
 typedef DWord TypeCode;
 
+typedef DWord status_type;
+typedef DWord type_code_type;
+
 typedef __UINTPTR_TYPE__ PhysAddr;
 typedef __UINTPTR_TYPE__ VirtAddr;
 
