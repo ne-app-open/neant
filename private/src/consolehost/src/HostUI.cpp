@@ -13,6 +13,10 @@ const SizeT kWindowFrameSz = sizeof(kWindowFrame);
 
 /// AMLALE: The ConsoleHost UI should have an options button and several shortcuts as well.
 
-const SInt32 kWindowPasteId = 33;
-const SInt32 kWindowCopyId = 34;
-const SInt32 kWindowSettingsId = 35;
+#ifndef kWindowBaseId
+#define kWindowBaseId (33)
+#endif
+
+const SInt32 kWindowPasteId = kWindowBaseId + 1;
+const SInt32 kWindowCopyId = kWindowBaseId + 2;
+const SInt32 kWindowSettingsId = kWindowBaseId + 3;
