@@ -11,17 +11,22 @@
 
 /// @brief This file is useful for a set of standaridzed types for NeAnt/Ant distros.
 
-typedef unsigned int   DWord;
-typedef unsigned short Word;
+typedef __UINT32_TYPE__   DWord;
+typedef __UINT16_TYPE__ Word;
 
-typedef int   SDWord;
-typedef short SWord;
+typedef __INT32_TYPE__   SDWord;
+typedef __INT16_TYPE__ SWord;
 
 typedef __PTRDIFF_TYPE__ PtrDiff;
 typedef __PTRDIFF_TYPE__ Offset;
 
 typedef DWord Status;
+
+/// @brief a type code is used by a server to explain its status.
 typedef DWord TypeCode;
+
+typedef DWord status_type;
+typedef DWord type_code_type;
 
 typedef __UINTPTR_TYPE__ PhysAddr;
 typedef __UINTPTR_TYPE__ VirtAddr;

@@ -9,7 +9,7 @@
 
 .text
 
-.extern ddk_exit_driver_cleanup
+.extern ddk_dds_exit_driver_cleanup
 
 .data
 
@@ -27,7 +27,7 @@
 .intel_syntax noprefix
 kThreadBlkCanary:
     push rcx
-    call ddk_exit_driver_cleanup /* The exit routine if one program tries to runs the TB. */
+    call ddk_dds_exit_driver_cleanup /* The exit routine if one program tries to runs the TB. */
     pop rcx
 #endif
 kThreadBlkStart:

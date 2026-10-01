@@ -42,4 +42,4 @@ Designed to be make onboarding easier.
 
 Ne.app has a user group on our [Discord](https://discord.gg/uD76Qweght).
 
-###### Copyright 2022-2026, Ne.app.
+###### Copyright 2022-2026, Ne.app. Licensed under Apache 2.0.
