@@ -16,7 +16,6 @@
 IMPORT_C int printf(const char*, ...);
 IMPORT_C int scanf(const char*, ...);
 
-
 #ifdef NE_CONIO_COMPAT
 #define N_CONIO_COMPAT NE_CONIO_COMPAT
 
