@@ -38,6 +38,8 @@ IMPORT_C SInt32 CHSHandleListenII(Void) {
     if (kConsoleWnd == nullptr) {
       CHSOpenConsole();
       MUST_PASS(kConsoleWnd);
+      MUST_PASS(kConsoleWnd->fHandle);
+      MUST_PASS(kConsoleWnd->fKind != 0);
     }
   } while (kConsoleWnd != nullptr);
 

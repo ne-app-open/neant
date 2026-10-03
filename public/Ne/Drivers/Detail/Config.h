@@ -15,6 +15,16 @@
 #define _SUBSYSTEM_DDK 0x1000
 #define _SUBSYSTEM_SYS 0x1000
 
+#ifndef _SHARED
+/// @brief Shared attribute for the host pattern.
+#define _SHARED
+#endif
+
+#ifndef _PRIVATE
+/// @brief Private attribute for the host pattern.
+#define _PRIVATE
+#endif
+
 #ifndef _NEKERNEL
 #define _NEKERNEL 202609L
 #endif

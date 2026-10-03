@@ -9,6 +9,5 @@ SInt32 main(SInt32 argc, Char** argv) {
   LIBSYS_UNUSED(argc);
   LIBSYS_UNUSED(argv);
 
-  auto ret = kErrorSuccess;
-  return ret;
+  return kErrorSuccess;
 }

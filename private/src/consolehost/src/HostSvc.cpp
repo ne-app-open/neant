@@ -16,6 +16,7 @@ SInt32 main(SInt32 argc, Char** argv) {
 
   while (ret == kErrorSuccess) {
     ret = CHSHandleListenII();
+    MUST_PASS(ret == kErrorSuccess);
 
     SInt32 vkey = UsrGetVKeyDown(LWAS_VKEY_ESCAPE);
     if (vkey == LWAS_VKEY_ESCAPE) break;

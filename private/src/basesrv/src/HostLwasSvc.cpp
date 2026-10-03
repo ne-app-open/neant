@@ -7,9 +7,9 @@
 #include <Ne/System/LWAS.h>
 #include <SystemKit/Syscall.h>
 
-IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*);
-
 IMPORT_C Void UsrDestroyWindow(struct LHANDLE* handle) {
+  MUST_PASS(handle);
+
   if (handle && handle->fHandle) CasDestroyHeap(handle->fHandle, 0);
   if (handle) CasDestroyHeap(handle, 0);
 }
@@ -18,6 +18,7 @@ IMPORT_C Void UsrDestroyWindow(struct LHANDLE* handle) {
 IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key) {
   auto             r  = nesys_syscall_arg_2(nesys_hash_64("_UsrGetVKeyUp"), (VoidPtr) &key);
   volatile SInt32* ri = (volatile SInt32*) r;
+  MUST_PASS(ri);
 
   if (ri) return *ri;
 
@@ -28,6 +29,7 @@ IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key) {
 IMPORT_C SInt32 UsrGetVKeyDown(const SInt32 key) {
   auto             r  = nesys_syscall_arg_2(nesys_hash_64("_UsrGetVKeyDown"), (VoidPtr) &key);
   volatile SInt32* ri = (volatile SInt32*) r;
+  MUST_PASS(ri);
 
   if (ri) return *ri;
 
@@ -36,8 +38,9 @@ IMPORT_C SInt32 UsrGetVKeyDown(const SInt32 key) {
 
 /// @brief Is Virtual Key?
 IMPORT_C Bool UsrIsVKey(const SInt32 key) {
-  auto             r  = nesys_syscall_arg_2(nesys_hash_64("_UsrIsVKey"), (VoidPtr) &key);
+  auto           r  = nesys_syscall_arg_2(nesys_hash_64("_UsrIsVKey"), (VoidPtr) &key);
   volatile Bool* ri = (volatile Bool*) r;
+  MUST_PASS(ri);
 
   if (ri) return *ri;
 

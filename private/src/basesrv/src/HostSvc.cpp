@@ -15,5 +15,7 @@ SInt32 main(SInt32 argc, Char** argv) {
   auto ret = BsiInstallHost(argc, argv);
   if (ret != kErrorSuccess) return kErrorInvalidData;
 
+  MUST_PASS(ret != kErrorInvalidCreds);
+
   return ret;
 }
