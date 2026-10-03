@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NavigationHints>
+	<Pragma Key="ImageType">
+		DEBUG
+	</Pragma>
+	<Pragma Key="PreprocessorMacro">
+		_DEBUG
+	</Pragma>
+	<Pragma Key="SystemURI">baseapi.dll</Pragma>
+	<Pragma Key="SystemPort">3000</Pragma>
+</NavigationHints>
