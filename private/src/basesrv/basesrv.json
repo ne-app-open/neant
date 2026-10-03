@@ -23,7 +23,7 @@
     "-fno-rtti",
     "-fno-exceptions",
     "-Wl,--subsystem=17",
-    "-L../../../../krnl/private/libSystem",
+    "-L../../../../nekrnl/private/libSystem",
     "-lSystem"
   ],
   "cpp_macros": [
