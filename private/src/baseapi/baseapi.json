@@ -6,16 +6,17 @@
     "../../../public/",
     "../consolehost",
     "./",
-    "../../../../krnl/private",
-    "../../../../krnl/private/libSystem",
-    "../../../../krnl/private/libMsg",
-    "../../../../krnl/private/libPOSIX",
-    "../../../../krnl/private/libPThread",
-    "../../../../krnl/private/libThread",
-    "../../../../krnl/public/src"
+    "../../../../nekrnl/private",
+    "../../../../nekrnl/private/libSystem",
+    "../../../../nekrnl/private/libMsg",
+    "../../../../nekrnl/private/libPOSIX",
+    "../../../../nekrnl/private/libPThread",
+    "../../../../nekrnl/private/libThread",
+    "../../../../nekrnl/public/src"
   ],
   "sources_path": [
-    "src/*.cpp"
+    "src/*.cpp",
+    "src/*.S"
   ],
   "output_name": "./dist/baseapi.dll",
   "compiler_flags": [
@@ -25,10 +26,11 @@
     "-fPIC",
     "-fno-exceptions",
     "-Wl,--subsystem=17",
-    "-L../../../../krnl/private/libSystem",
+    "-L../../../../nekrnl/private/libSystem",
     "-lSystem"
   ],
   "cpp_macros": [
+    "__ne_arch=8064",
     "kNeBaseVersion=0x0100",
     "kNeBaseVersionHighest=0x0100",
     "kNeBaseVersionLowest=0x0100"

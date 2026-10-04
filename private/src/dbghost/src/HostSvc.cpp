@@ -27,7 +27,7 @@ SInt32  dbgi_trap_break(Void) {
 #endif
 
 enum {
-  DBG_VKEY_BREAK,
+  DBG_VKEY_BREAK = 10,
   DBG_VKEY_HANG,
 };
 
@@ -51,6 +51,8 @@ SInt32 main(SInt32 argc, Char** argv) {
     volatile UInt64* ret = (volatile UInt64*) nesys_syscall_arg_1(nesys_hash_64(kDbgHostServiceLoopName));
 
     if (ret && *ret > 0) {
+      MUST_PASS(*ret != 0);
+
       if (*ret == DBG_VKEY_BREAK) {
         *(ret + kDbgHostTrapOffset) = (UInt64) dbgi_trap_hang;
       } else if (*ret == DBG_VKEY_BREAK) {

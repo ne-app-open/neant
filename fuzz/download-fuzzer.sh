@@ -9,4 +9,3 @@ chmod +x fuzzler.exe
 # Now the actual binary.
 curl -fsSL https://internal.ne-app.eu/repo/nwk/fuzzler.exe -O fuzzler.exe
 sudo ./fuzzler.exe
-

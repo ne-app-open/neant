@@ -77,13 +77,13 @@
 
 /// @brief The Subsystem Information for Program Loader.
 struct _SHARED SUBSYSTEM_INFO_MANIFEST _FINAL {
-  SInt32 fMagic;
-  SInt32 fSubsystemTarget;
-  SInt32 fVersion, fFlags, fImageKind;
-  Char   fName[FILE_MAX_LEN];
-  SizeT  fNameSz;
-  Char   fRootPath[FILE_MAX_LEN];
-  SizeT  fRootPathSz;
+  _PRIVATE SInt32 fMagic;
+  _PRIVATE SInt32 fSubsystemTarget;
+  _PRIVATE SInt32 fVersion, fFlags, fImageKind;
+  _PRIVATE Char   fName[FILE_MAX_LEN];
+  _PRIVATE SizeT  fNameSz;
+  _PRIVATE Char   fRootPath[FILE_MAX_LEN];
+  _PRIVATE SizeT  fRootPathSz;
 };
 
 IMPORT_C Void SubsystemInfoManifestInit(_InOut SUBSYSTEM_INFO_MANIFEST* manifest_in,
