@@ -26,6 +26,11 @@
 #define N_HAS_FAILED(X) ((X) != N_OK)
 #endif
 
+/// @brief BaseAPI DLL macro
+#ifndef _BDLL
+#define _BDLL _COMMONCORE
+#endif
+
 // --------------------- ARCH ---------------------
 // | OS.h |
 // | /System/ | OR | /Ant/

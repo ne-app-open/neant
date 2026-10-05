@@ -27,7 +27,8 @@ if(DEFINED NEANT_SRC_RELEASE_PROFILE)
 	target_include_directories(DDK.DDS.dll PUBLIC ../../../../nekrnl/private/libSystem/)
 	target_include_directories(DDK.DDS.dll PUBLIC ../../../../nekrnl/private/)
 	target_link_directories(DDK.DDS.dll PUBLIC ../../../../nekrnl/private/libDDK/)
-	target_link_libraries(DDK.DDS.dll PRIVATE DDK)
+	target_link_directories(DDK.DDS.dll PUBLIC ../../../../nekrnl/private/libSystem/)
+	target_link_libraries(DDK.DDS.dll PRIVATE DDK System)
 
 elseif(DEFINED NEANT_SRC_DEBUG_PROFILE)
 
