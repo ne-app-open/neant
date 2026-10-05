@@ -6,13 +6,13 @@
     "../../../public/",
     "../consolehost",
     "./",
-    "../../../../krnl/private",
-    "../../../../krnl/private/libSystem",
-    "../../../../krnl/private/libMsg",
-    "../../../../krnl/private/libPOSIX",
-    "../../../../krnl/private/libPThread",
-    "../../../../krnl/private/libThread",
-    "../../../../krnl/public/src"
+    "../../../../nekrnl/private",
+    "../../../../nekrnl/private/libSystem",
+    "../../../../nekrnl/private/libMsg",
+    "../../../../nekrnl/private/libPOSIX",
+    "../../../../nekrnl/private/libPThread",
+    "../../../../nekrnl/private/libThread",
+    "../../../../nekrnl/public/src"
   ],
   "sources_path": [
     "src/*.cpp"
