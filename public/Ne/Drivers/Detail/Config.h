@@ -41,10 +41,13 @@
 #define __cleanup(x) unused
 #endif
 
-struct ddk_guard_type _FINAL {
-    int32_t* e_;
+typedef int32_t* ddk_guard_int_ptr_t;
+
+struct _PRIVATE ddk_guard_type _FINAL {
+    ddk_guard_int_ptr_t e_;
 };
 
+/// @brief Cleanup zone for the DDK.
 DDK_EXTERN void ddk_cleanup_zone(int32_t**);
 
 /// @brief Does enable the DDK guard when calling in a stack frame.
