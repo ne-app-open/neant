@@ -9,6 +9,12 @@
 #include <Ne/OS.h>
 #include <SystemKit/Macros.h>
 
+#ifdef __cplusplus
+#define _ROOT_NS ::
+#else
+#define _ROOT_NS 
+#endif
+
 /// @brief This file is useful for a set of standaridzed types for NeAnt/Ant distros.
 
 typedef __UINT32_TYPE__   DWord;
