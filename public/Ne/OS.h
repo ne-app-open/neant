@@ -31,29 +31,34 @@
 #define _BDLL _COMMONCORE
 #endif
 
+/// @brief Variant of the BaseAPI DLL macro
+#ifndef _NDLL
+#define _NDLL _BDLL
+#endif
+
 // --------------------- ARCH ---------------------
 // | OS.h |
 // | /System/ | OR | /Ant/
 // --------------------- ARCH ---------------------
 
-IMPORT_C int system(const char*);
-IMPORT_C int execute(const char*, const int, char**);
-IMPORT_C int shell(const char*, const int, char**);
+IMPORT_C SInt32 system(const Char*);
+IMPORT_C SInt32 execute(const Char*, const SInt32, Char**);
+IMPORT_C SInt32 shell(const Char*, const SInt32, Char**);
 
-IMPORT_C int atexit(void (*function) (void));
-IMPORT_C unsigned int sleep(unsigned int seconds);
+IMPORT_C SInt32 atexit(Void (*function) (Void));
+IMPORT_C UInt32 sleep(UInt32 seconds);
 
 #ifndef at_fini
 #define at_fini atexit
 #endif
 
-IMPORT_C long start_task_fiber(void (*function) (), ...);
-IMPORT_C int end_task_fiber(long);
+IMPORT_C SInt64 start_task_fiber(Void (*function) (), ...);
+IMPORT_C SInt32 end_task_fiber(SInt64);
 
-IMPORT_C long start_exe_host(const char*, const int, char**);
-IMPORT_C int end_exe_host(const long);
+IMPORT_C SInt64 start_exe_host(const Char*, const SInt32, Char**);
+IMPORT_C SInt32 end_exe_host(const SInt64);
 
-IMPORT_C long run_host_dll(const char*, const int, char**);
-IMPORT_C int end_host_dll(long);
+IMPORT_C SInt64 run_host_dll(const Char*, const SInt32, Char**);
+IMPORT_C SInt32 end_host_dll(SInt64);
 
 #endif

@@ -8,7 +8,7 @@
 
 int main(int, char**) {
   clrscr();
-  _ROOT_NS printf("%s", "Hello, World!\n");
+  _ROOT_NS execute("/mnt/c/commonver", 0LL, nullptr);
   
   return EXIT_SUCCESS;
 }

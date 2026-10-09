@@ -7,31 +7,30 @@
 #define __NEAPP_CONIO_H__
 
 #include <Ne/Types.h>
-#include <SystemKit/Macros.h>
 
 #ifndef _CONIO
 #define _CONIO (202610)
 #endif
 
-IMPORT_C int printf(const char*, ...);
-IMPORT_C int scanf(const char*, ...);
+IMPORT_C SInt32 printf(const Char*, ...);
+IMPORT_C SInt32 scanf(const Char*, ...);
 
 #ifdef NE_CONIO_COMPAT
 #define N_CONIO_COMPAT NE_CONIO_COMPAT
 
-IMPORT_C int cscanf(char* fmt, ...);
-IMPORT_C int getch(void);
-IMPORT_C int getche(void);
-IMPORT_C char* cgets(char* s);
-IMPORT_C void clrscr(void);
-IMPORT_C int cputs(const char* s);
+IMPORT_C SInt32 cscanf(Char* fmt, ...);
+IMPORT_C SInt32 getch(Void);
+IMPORT_C SInt32 getche(Void);
+IMPORT_C Char* cgets(Char* s);
+IMPORT_C Void clrscr(Void);
+IMPORT_C SInt32 cputs(const Char* s);
 #endif
 
 #ifdef NE_CLRSCR_SUPPORT
 #define N_CLRSCR_SUPPORT NE_CLRSCR_SUPPORT
 
 #undef clrscr
-#define clrscr() printf("\e[1;1H\e[2J");
+#define clrscr() _ROOT_NS printf("\e[1;1H\e[2J");
 #endif
 
 #endif
