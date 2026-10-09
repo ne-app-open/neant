@@ -13,11 +13,13 @@ DDK_EXTERN int32_t ddk_kernel_canary__;
 
 /// @brief Does a sanity check.
 DDK_EXTERN void ddk_sanity_check_init(void) {
+    if (ddk_kernel_canary__ != 0) return;
     ddk_kernel_canary__ = 0;
 }
 
 DDK_EXTERN bool ddk_sanity_check(void) {
-    return ddk_kernel_canary__ == 0;
+    if (ddk_kernel_canary__ != 0) return false;
+    return true;
 }
 
 /// @brief Does enable the DDK guard when calling in a stack frame.

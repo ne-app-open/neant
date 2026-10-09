@@ -17,9 +17,17 @@
 /// @note The CAS is a user subsystem abstracting away system calls as well for performance reasons.
 /// *******************************************************
 
-#define CasCreateEvent(event_name) EvtAddListener(event_name, nullptr)
-#define CasRemoveEvent(event_name) EvtRemoveListener(event_name, nullptr)
+#ifndef CasCreateEvent
+#define CasCreateEvent(event_name, listener) EvtAddListener(event_name, listener)
+#endif
+
+#ifndef CasRemoveEvent
+#define CasRemoveEvent(event_name, listener) EvtRemoveListener(event_name, listener)
+#endif
+
+#ifndef CasDispatchEvent
 #define CasDispatchEvent(event_name, event_data) EvtDispatchEvent(event_name, event_data)
+#endif
 
 /// @param sz size of block.
 /// @param flags flags of block.
