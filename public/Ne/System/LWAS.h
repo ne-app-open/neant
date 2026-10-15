@@ -155,18 +155,20 @@ typedef enum {
   LWAS_VKEY_COUNT /* sentinel / array sizing */
 } LWAS_VKey;
 
+/// @brief Create window function.
 IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*);
 
+/// @brief Destroy window function.
 IMPORT_C Void UsrDestroyWindow(struct LHANDLE*);
 
 /// @brief Is Virtual Key Up?
-IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key);
+IMPORT_C SInt32 UsrGetVKeyUp(const SInt32);
 
 /// @brief Is Virtual Key Down?
-IMPORT_C SInt32 UsrGetVKeyDown(const SInt32 key);
+IMPORT_C SInt32 UsrGetVKeyDown(const SInt32);
 
 /// @brief Is Virtual Key?
-IMPORT_C Bool UsrIsVKey(const SInt32 key);
+IMPORT_C Bool UsrIsVKey(const SInt32);
 
 typedef struct LHANDLE HLWAS;
 typedef HLWAS*         PHLWAS;

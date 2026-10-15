@@ -4,3 +4,15 @@
 // Official repository: https://github.com/ne-app-open/neant
 
 #include <Ne/System/LWAS.h>
+
+/// @brief Is Virtual Key Down?
+IMPORT_C SInt32 UsrGetVKeyDown(const SInt32)
+{
+    return kErrorInvalidData;
+}
+
+/// @brief Is Virtual Key?
+IMPORT_C Bool UsrIsVKey(const SInt32)
+{
+    return NO;
+}
