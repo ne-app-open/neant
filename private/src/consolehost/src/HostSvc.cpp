@@ -6,10 +6,7 @@
 #include <CHSKit/Console.h>
 #include <Ne/System/LWAS.h>
 
-SInt32 main(SInt32 argc, Char** argv) {
-  LIBSYS_UNUSED(argc);
-  LIBSYS_UNUSED(argv);
-
+SInt32 main(SInt32, Char**) {
   auto ret = CHSOpenConsole();
 
   if (ret != kErrorSuccess) return ret;
