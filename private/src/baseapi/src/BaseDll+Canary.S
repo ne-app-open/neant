@@ -32,5 +32,5 @@ kThreadBlk:
     .word BDLL_TB_IDENT
     .word BDLL_TB_VERSION /* version */
     .word 0x0 /* pad */
-    .word 0x0 /* pad */
+    .word 0x0 /* pad2 */
 kThreadBlkEnd:

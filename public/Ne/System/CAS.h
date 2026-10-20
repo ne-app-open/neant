@@ -34,7 +34,7 @@
 IMPORT_C VoidPtr CasAllocateHeap(SizeT sz, SInt32 flags);
 
 /// @brief Allocate heap block with additional parameter.
-IMPORT_C VoidPtr CasAllocateHeapII(SizeT sz, SInt32 flags, SInt32);
+IMPORT_C VoidPtr CasAllocateHeapII(SizeT sz, SInt32 flags, SInt32 init);
 
 /// @brief Destroy heap block.
 IMPORT_C Void CasDestroyHeap(_InOut VoidPtr, SInt32 zero_out);
