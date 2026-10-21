@@ -28,3 +28,11 @@ IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key)
     if (key == 0) return -1;
     return *(SInt32*)nesys_syscall_arg_2(nesys_hash_64("_UsrGetVKeyUp"), (VoidPtr)&key);
 }
+
+/// @note Could be a joystick, keyboard, touch input.
+IMPORT_C SInt32 UsrGetInputType(Void)
+{    
+    return *(SInt32*)nesys_syscall_arg_1(nesys_hash_64("_UsrGetInputType"));
+}
+
+// EOF
