@@ -26,7 +26,7 @@ SInt32  dbgi_trap_break(Void) {
 #warning !! Trap breaks are undefined !!
 #endif
 
-enum {
+enum : SInt64 {
   DBG_VKEY_BREAK = 10,
   DBG_VKEY_HANG,
 };
@@ -50,8 +50,9 @@ SInt32 main(SInt32 argc, Char** argv) {
     if (kDbgHost && kDbgHost->fDbgSocket == kNeInvalidDbgSocket) break;
     volatile UInt64* ret = (volatile UInt64*) nesys_syscall_arg_1(nesys_hash_64(kDbgHostServiceLoopName));
 
-    if (ret && *ret > 0) {
+    if (ret && *ret != 0) {
       MUST_PASS(*ret != 0);
+      MUST_PASS(*ret > 0);
 
       if (*ret == DBG_VKEY_BREAK) {
         *(ret + kDbgHostTrapOffset) = (UInt64) dbgi_trap_hang;

@@ -3,13 +3,13 @@
 # Ne.app NeAnt
 
 <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-blue.svg?style=for-the-badge" alt="LICENSE"></a>
-![GitHub Repo Stars](https://img.shields.io/github/stars/ne-app-eu/src?style=for-the-badge)
+![GitHub Repo Stars](https://img.shields.io/github/stars/ne-app-open/neant?style=for-the-badge)
 
-## Getting Started on NeAnt
+## Getting Started
 
 Please follow the instructions below to get started:
 
-## Building NeAnt
+## Building
 
 You will need the following:
 
@@ -17,9 +17,7 @@ You will need the following:
 - `MinGW` or `Clang`, depending on the HAL/target ISA.
 - `CoreUtils`, for the core compiler utilities.
 
-(Please follow the instructions in `/private/src/refs` and wiki to get started)
-
-### Install NeAnt
+### Installing
 
 > [!NOTE]
 > On Windows, you will need to use the setup link at:
@@ -29,14 +27,14 @@ You will need the following:
 curl -fsSL http://install.nekernel.org | sh
 ```
 
-## NeAnt and Nectar Primers
+## Tutorial
 
-The primers are available at:
+The primers and tutorials are available at:
 
 - https://primer.src.nekernel.org
 - https://primer.nectar.nekernel.org
 
-Designed to be make onboarding easier.
+They are designed to make onboarding easier for users and developers.
 
 ## Ne.app User Groups
 

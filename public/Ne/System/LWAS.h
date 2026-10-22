@@ -31,6 +31,35 @@ struct _SHARED LHANDLE _FINAL {
   _PRIVATE Char    fPad2[kNeAntPadLen];
 };
 
+/// @brief Create window function.
+IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*);
+
+/// @brief Destroy window function.
+IMPORT_C Void UsrDestroyWindow(struct LHANDLE*);
+
+/// @brief Is Virtual Key Up?
+IMPORT_C SInt32 UsrGetVKeyUp(const SInt32);
+
+/// @brief Is Virtual Key Down?
+IMPORT_C SInt32 UsrGetVKeyDown(const SInt32);
+
+/// @brief Is Virtual Key?
+IMPORT_C Bool UsrIsVKey(const SInt32);
+
+typedef struct LHANDLE HLWAS;
+typedef HLWAS*         PHLWAS;
+
+enum : SInt32 {
+  kUserInputInvalid,
+  kUserInputJoystick = 100,
+  kUserInputKeyboard,
+  kUserInputTouchInput,
+};
+
+/// @note Could be a joystick, keyboard, touch input.
+/// @brief Grabs the input type currently connected as the main input method.
+IMPORT_C SInt32 UsrGetInputType(Void);
+
 typedef enum {
   /* Alphabetic */
   LWAS_VKEY_A,
@@ -154,21 +183,5 @@ typedef enum {
 
   LWAS_VKEY_COUNT /* sentinel / array sizing */
 } LWAS_VKey;
-
-IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*);
-
-IMPORT_C Void UsrDestroyWindow(struct LHANDLE*);
-
-/// @brief Is Virtual Key Up?
-IMPORT_C SInt32 UsrGetVKeyUp(const SInt32 key);
-
-/// @brief Is Virtual Key Down?
-IMPORT_C SInt32 UsrGetVKeyDown(const SInt32 key);
-
-/// @brief Is Virtual Key?
-IMPORT_C Bool UsrIsVKey(const SInt32 key);
-
-typedef struct LHANDLE HLWAS;
-typedef HLWAS*         PHLWAS;
 
 #endif  // _NE_LWAS_SUBSYSTEM_H_
