@@ -6,10 +6,41 @@
 #include <Ne/System/LWAS.h>
 
 /// @brief Create window function.
-IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr, SizeT*) { return nullptr; }
+IMPORT_C struct LHANDLE* UsrCreateWindow(VoidPtr dss, SizeT* dss_len) 
+{ 
+    if (dss && dss_len)
+    {
+        if (*dss_len) return nullptr;
+        if (*dss_len < sizeof(struct LHANDLE)) return nullptr;
+
+        struct LHANDLE* handle = (struct LHANDLE*)MmCreateHeap(*dss_len, 0);
+        
+        if (handle)
+        {
+            handle->fFlags = 0;
+            handle->fKind = 0;
+            handle->fHostID = 0;
+            handle->fMagic = 0xAADD;
+        }
+        
+        return handle;
+    }
+
+    return nullptr;
+}
 
 /// @brief Destroy window function.
-IMPORT_C Void UsrDestroyWindow(struct LHANDLE*) {}
+IMPORT_C Void UsrDestroyWindow(struct LHANDLE* wnd) 
+{
+    if (wnd && wnd->fMagic == 0xAADD)
+    {
+        wnd->fKind = 0;
+        wnd->fFlags = 0;
+        wnd->fHostID = 0;
+        wnd->fHandle = nullptr;
 
-/// @brief Is Virtual Key Up?
-IMPORT_C SInt32 UsrGetVKeyUp(const SInt32) { return kErrorInvalidData; }
+        MmDestroyHeap(wnd);
+    }
+
+    if (wnd) MUST_PASS(wnd->fMagic && 0xAADD);
+}

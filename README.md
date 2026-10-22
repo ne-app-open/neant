@@ -34,7 +34,7 @@ The primers and tutorials are available at:
 - https://primer.src.nekernel.org
 - https://primer.nectar.nekernel.org
 
-They are designed to be make the onboarding easier.
+They are designed to make onboarding easier for users and developers.
 
 ## Ne.app User Groups
 
