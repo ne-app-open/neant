@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Attempt NeBuild
-      run: sudo curl https://git.src.nenekrnl.org/bld/releases/download/v0.0.6-apple-m1/ne-build-debian -o /usr/bin/nebuild && sudo chmod +x /usr/bin/nebuild
+      run: sudo curl https://git.src.nekernel.org/bld/releases/download/v0.0.6-apple-m1/ne-build-debian -o /usr/bin/nebuild && sudo chmod +x /usr/bin/nebuild
     - name: Check NeBuild
       run: nebuild -v
     - name: Install QEMU-IMG
