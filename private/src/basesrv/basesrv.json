@@ -23,6 +23,8 @@
     "-fno-rtti",
     "-fno-exceptions",
     "-Wl,--subsystem=17",
+    "-L../baseapi/dist",
+    "-lbaseapi",
     "-L../../../../nekrnl/private/libSystem",
     "-lSystem"
   ],
