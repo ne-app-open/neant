@@ -1,0 +1,28 @@
+name: Ne.app BaseAPI DLL [BUILD] (x64)
+
+on:
+  push:
+    branches: [ "develop" ]
+  pull_request:
+    branches: [ "develop" ]
+
+env:
+  BUILD_TYPE: SYS_BUILD
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Attempt NeBuild
+      run: sudo curl https://git.src.nekernel.org/bld/releases/download/v0.0.6-apple-m1/ne-build-debian -o /usr/bin/nebuild && sudo chmod +x /usr/bin/nebuild
+    - name: Check NeBuild
+      run: nebuild -v
+    - name: Install QEMU-IMG
+      run: sudo apt update && sudo apt install qemu-utils
+    - name: Attempt DDK Build
+      run: sudo apt install g++-mingw-w64-x86-64 gcc-mingw-w64 nasm && git clone https://github.com/ne-app-open/nekrnl.git ../nekrnl && cd ../nekrnl/private/libDDK && nebuild libDDK.json
+    - name: Attempt Host Build
+      run: cd private/src && cd baseapi && nebuild baseapi.json
+      
