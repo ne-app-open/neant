@@ -20,3 +20,5 @@ const SizeT _PRIVATE kWindowFrameSz = sizeof(kWindowFrame);
 const SInt32 _PRIVATE kWindowPasteId = kWindowBaseId + 1;
 const SInt32 _PRIVATE kWindowCopyId = kWindowBaseId + 2;
 const SInt32 _PRIVATE kWindowSettingsId = kWindowBaseId + 3;
+
+// END
