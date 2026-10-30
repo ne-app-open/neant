@@ -60,3 +60,5 @@ DDK_EXTERN bool ddk_sanity_check(void);
 DDK_EXTERN void ddk_sanity_check_init(void);
 
 #endif
+
+// END

@@ -22,3 +22,5 @@ IMPORT_C SInt32 BsiInstallHost(SInt32 argc, Char** argv)
 
     return kErrorExecutable;
 }
+
+// END

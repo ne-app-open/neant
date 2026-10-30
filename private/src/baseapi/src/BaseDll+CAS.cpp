@@ -39,3 +39,5 @@ IMPORT_C Void CasDestroyHeapII(_InOut VoidPtr ptr, SInt32 zero_out, SizeT zero_o
     if (ptr) MmFillMemory(ptr, zero_out, zero_out_len);
     MmDestroyHeap(ptr);
 }
+
+// END

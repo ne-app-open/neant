@@ -20,3 +20,5 @@ DDK_EXTERN void ddk_lock_irq(void);
 DDK_EXTERN void ddk_unlock_irq(void);
 
 #endif // _NE_DDK_DDS_H_
+
+// END

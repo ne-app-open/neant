@@ -1,6 +1,7 @@
 -Ipublic/
 -Iprivate/src/dbghost
 -Iprivate/src/consolehost
+-Iprivate/src/nullsrv
 -Iprivate/src/posixsrv
 -Iprivate/src/basesrv
 -I../krnl/private/

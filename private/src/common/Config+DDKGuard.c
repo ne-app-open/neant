@@ -45,3 +45,5 @@ DDK_EXTERN void ddk_cleanup_zone(int32_t** e) {
     kfree(*e);
     *e = NULL;
 }
+
+// END
