@@ -1,13 +1,13 @@
 <!-- ReadMe of the NeAnt -->
 
-# Ne.app NeAnt
+# Ne.app NeAnt 🏗️
 
 <a href="LICENSE"><img src="https://img.shields.io/badge/LICENSE-Apache--2.0-blue.svg?style=for-the-badge" alt="LICENSE"></a>
 ![GitHub Repo Stars](https://img.shields.io/github/stars/ne-app-open/neant?style=for-the-badge)
 
 > [!NOTE]
 > Stable and Validation PDK installers have moved to the scripts/ folder! Please update
-> your path accrodingly.
+> your path accordingly.
 
 ## Getting Started
 
