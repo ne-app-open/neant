@@ -29,6 +29,8 @@ IMPORT_C Void CasDestroyHeap(_InOut VoidPtr ptr, SInt32 zero_out)
 {
     if (!ptr) return;
     MmDestroyHeap(ptr);
+    
+    ptr = nullptr;
 }
 
 /// @param zero_out shall we zero-out the block after it being freed?
@@ -38,6 +40,8 @@ IMPORT_C Void CasDestroyHeapII(_InOut VoidPtr ptr, SInt32 zero_out, SizeT zero_o
     
     if (ptr) MmFillMemory(ptr, zero_out, zero_out_len);
     MmDestroyHeap(ptr);
+    
+    ptr = nullptr;
 }
 
 // END
