@@ -31,3 +31,5 @@ IMPORT_C Void ShmDestroyProcII(_InOut SHANDLE* handle, _Input SInt32 flags);
 IMPORT_C Void ShmDestroyProcIII(_InOut SHANDLE* handle, _Input SInt32 flags, _Input Bool zero_out);
 
 #endif
+
+// EOF

@@ -106,3 +106,5 @@ IMPORT_C Void SubsystemInfoManifestSetRootPath(_InOut SUBSYSTEM_INFO_MANIFEST* m
                                                _Input Char* root_path, _Input SizeT root_path_sz);
 
 IMPORT_C Void SubsystemInfoTerminate(_InOut SUBSYSTEM_INFO_MANIFEST* manifest_in);
+
+// END

@@ -43,3 +43,5 @@ IMPORT_C Void CasDestroyHeap(_InOut VoidPtr, SInt32 zero_out);
 IMPORT_C Void CasDestroyHeapII(_InOut VoidPtr, SInt32 zero_out, SizeT zero_out_len);
 
 #endif // _NE_CORE_SUBSYSTEM_H_
+
+// END

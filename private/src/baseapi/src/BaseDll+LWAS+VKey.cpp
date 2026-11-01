@@ -35,4 +35,4 @@ IMPORT_C SInt32 UsrGetInputType(Void)
     return *(SInt32*)nesys_syscall_arg_1(nesys_hash_64("_UsrGetInputType"));
 }
 
-// EOF
+// END

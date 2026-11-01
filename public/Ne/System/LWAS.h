@@ -185,3 +185,5 @@ typedef enum {
 } LWAS_VKey;
 
 #endif  // _NE_LWAS_SUBSYSTEM_H_
+
+// END
