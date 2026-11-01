@@ -34,3 +34,5 @@ DDK_EXTERN void ddk_unlock_irq(void) {
   ke_call_dispatch("RtlIrqUnlockInterrupts", 1, kIrqGuard, sizeof(struct ddk_guard_type));
 #endif
 }
+
+// END

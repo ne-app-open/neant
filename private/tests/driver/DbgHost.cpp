@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-// Copyright 2026, Amlal El Mahrouss (amlal@nekernel.org)
+// Copyright 2026, Amlal El Mahrouss (amlal@nekernel.org) and Ne.app
 // Licensed under the Apache License, Version 2.0 (see LICENSE file)
 // Official repository: https://github.com/ne-app-eu/src
 
@@ -15,3 +15,5 @@ KT_DECL_TEST(MainDbgHost, []{
 })
 
 Void KT_TEST_MAIN() KT_RUN_TEST(MainDbgHost)
+
+// END

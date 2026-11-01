@@ -44,3 +44,5 @@ IMPORT_C Void UsrDestroyWindow(struct LHANDLE* wnd)
 
     if (wnd) MUST_PASS(wnd->fMagic && 0xAADD);
 }
+
+// END

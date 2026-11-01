@@ -46,3 +46,5 @@ IMPORT_C Bool UsrIsVKey(const SInt32 key) {
 
   return LWAS_VKEY_COUNT;
 }
+
+// END
