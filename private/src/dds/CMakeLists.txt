@@ -57,3 +57,5 @@ elseif(DEFINED NEANT_SRC_DEBUG_PROFILE)
 	target_link_libraries(DDK.DDS.dll PRIVATE DDK)
 
 endif()
+
+# EOF
