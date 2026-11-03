@@ -25,4 +25,6 @@ IMPORT_C _PRIVATE Void ddsi_must_pass_init(Void) {
     MUST_PASS(kCommonCoreVersion == _COMMONCORE);
 }
 
+IMPORT_C _PRIVATE Void ddsi_must_pass_fini(Void) {}
+
 // END
