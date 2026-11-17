@@ -5,6 +5,10 @@
 
 #pragma once
 
+#ifndef _RSRC_API
+#define _RSRC_API 202611
+#endif
+
 #include <Ne/OS.h>
 #include <Ne/System/CAS.h>
 
